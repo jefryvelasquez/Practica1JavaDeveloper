@@ -1,6 +1,7 @@
 package co.com.Bancolombia;
 
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class Banco implements ServicioClientes{
 
@@ -8,14 +9,14 @@ public class Banco implements ServicioClientes{
     private Domicilio domicilio;
     private String rfc;
     private String telefono;
-    private ArrayList<Cliente> clientes;
+    private TreeSet<Cliente> clientes;
 
     public Banco(String nombre, Domicilio domicilio, String rfc, String telefono) {
         this.nombre = nombre;
         this.domicilio = domicilio;
         this.rfc = rfc;
         this.telefono = telefono;
-        this.clientes = new ArrayList<Cliente>();
+        this.clientes = new TreeSet<>();
     }
 
     public String getNombre() {
@@ -50,11 +51,11 @@ public class Banco implements ServicioClientes{
         this.telefono = telefono;
     }
 
-    public ArrayList<Cliente> getClientes() {
+    public TreeSet<Cliente> getClientes() {
         return clientes;
     }
 
-    public void setClientes(ArrayList<Cliente> clientes) {
+    public void setClientes(TreeSet<Cliente> clientes) {
         this.clientes = clientes;
     }
 
@@ -74,9 +75,9 @@ public class Banco implements ServicioClientes{
         return clientes.stream().filter(cliente -> cliente.getNumero() == numero).findFirst().orElse(null);
 
     }
-    public Cliente[] obtenerClientes(){
+    public TreeSet<Cliente> obtenerClientes(){
 
-            return clientes.toArray(new Cliente[0]);
+            return clientes;
 
     }
     public Cliente buscarClientePorRfc(String rfc){

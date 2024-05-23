@@ -2,7 +2,7 @@ package co.com.Bancolombia;
 
 import java.util.ArrayList;
 
-public class Cliente implements ServicioCuentas{
+public class Cliente implements ServicioCuentas, Comparable<Cliente> {
 
     private int numero;
     private String nombre;
@@ -70,6 +70,14 @@ public class Cliente implements ServicioCuentas{
         this.cuentas = cuentas;
     }
 
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
     public boolean agregarCuenta(Cuenta cuenta){
         return cuentas.add(cuenta);
     }
@@ -93,17 +101,15 @@ public class Cliente implements ServicioCuentas{
             }
         }
     }
-    public Cuenta[] obtenerCuentas(){
-        return cuentas.toArray(new Cuenta[0]);
+    public ArrayList<Cuenta> obtenerCuentas(){
+        return cuentas;
     }
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
+    @Override
+    public int compareTo(Cliente o) {
+        return Integer.compare(this.numero, o.numero);
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
 
     @Override
     public String toString() {

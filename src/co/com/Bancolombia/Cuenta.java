@@ -1,6 +1,6 @@
 package co.com.Bancolombia;
 
-public abstract class Cuenta {
+public abstract class Cuenta implements Comparable<Cuenta> {
 
     private int numero;
     private String fechaApertura;
@@ -45,14 +45,6 @@ public abstract class Cuenta {
         this.fechaCancelacion = fechaCancelacion;
     }
 
-/*    public abstract void depositar(double cantidad);
-
-    public abstract void retirar(double cantidad);
-
-    public abstract void cancelar();
-
-    public abstract void imprimir();*/
-
     @Override
     public String toString() {
         return "Cuenta{" +
@@ -62,5 +54,10 @@ public abstract class Cuenta {
                 "fechaCancelacion=" + fechaCancelacion + "}";
     }
 
+    @Override
+    public int compareTo(Cuenta o){
+        return Double.compare(this.saldo, o.saldo);
+
+    }
 
 }

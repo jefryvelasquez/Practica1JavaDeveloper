@@ -1,10 +1,12 @@
 package co.com.Bancolombia;
 
+import java.util.TreeSet;
+
 public interface ServicioClientes {
 
-    public boolean agregarCliente(Cliente cliente);
-    public boolean eliminarCliente(int numero);
-    public Cliente consultarCliente(int numero);
-    public Cliente[] obtenerClientes();
-    public Cliente buscarClientePorRfc(String rfc);
+    boolean agregarCliente(Cliente cliente);
+    boolean eliminarCliente(int numero);
+    Cliente consultarCliente(int numero);
+    TreeSet<Cliente> obtenerClientes();
+    Cliente buscarClientePorRfc(String rfc);
 }

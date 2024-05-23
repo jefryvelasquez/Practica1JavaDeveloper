@@ -36,30 +36,35 @@ public class Main {
 
         cliente.abonarCuenta(1, 500);
 
-        System.out.println("Banco: " + banco.toString());
+        System.out.println("Se imprime la información del banco con sus clientes: ");
+        System.out.println("Banco: " + banco + "\n");
 
-        System.out.println("Cuentas cliente 1:" + Arrays.toString(cliente.obtenerCuentas()));
+        System.out.println("Se imprimen las cuentas del cliente 1:");
+        System.out.println("Cuentas cliente 1:" + cliente.obtenerCuentas() + "\n");
+
 
         cliente.cancelarCuenta(2);
+        cliente.retirar(1,150);
+        System.out.println("Se imprimen las cuentas del cliente 1, luego de cancelar cuenta 2 y hacer retiro en cuenta 1:");
+        System.out.println("Cuentas cliente 1:" + cliente.obtenerCuentas() + "\n");
 
-        cliente.retirar(2,150);
-
-        System.out.println("Cuentas cliente 1:" + Arrays.toString(cliente.obtenerCuentas()));
 
         cliente.abonarCuenta(1, 500);
+        System.out.println("Se imprimen la cuentas del cliente 1, luego de abonar en cuenta 1:");
+        System.out.println("Cuentas cliente 1:" + cliente.obtenerCuentas() + "\n");
+
 
         banco.eliminarCliente(2);
+        System.out.println("Se imprime la información del banco con sus clientes luego de elimanr cliente 2 ");
+        System.out.println("Banco: " + banco + "\n");
 
-        System.out.println( banco.consultarCliente(1).toString());
+        System.out.println("Se imprime la información del cliente 1: ");
+        System.out.println( banco.consultarCliente(1).toString() + "\n");
 
-        System.out.println("Banco: " + banco.toString());
 
-        System.out.println("CLientes del banco: " + Arrays.toString(banco.obtenerClientes()));
+        System.out.println("Clientes del banco: " + banco.obtenerClientes() + "\n");
 
+        System.out.println("Se consulta cliente por RFC:");
         System.out.println(banco.buscarClientePorRfc("PEJL890123").toString());
-
-
-
-
     }
 }
