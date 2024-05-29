@@ -1,4 +1,4 @@
-package co.com.Bancolombia;
+package co.com.Practica1;
 
 public class CuentaDeAhorro extends Cuenta {
 
