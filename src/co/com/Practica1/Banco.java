@@ -66,13 +66,11 @@ public class Banco implements ServicioClientes{
     public boolean eliminarCliente(int numero) {
 
         return clientes.removeIf(cliente -> cliente.getNumero() == numero);
-
     }
 
     public Cliente consultarCliente(int numero){
 
         return clientes.stream().filter(cliente -> cliente.getNumero() == numero).findFirst().orElse(null);
-
     }
     public TreeSet<Cliente> obtenerClientes(){
 
@@ -82,7 +80,6 @@ public class Banco implements ServicioClientes{
     public Cliente buscarClientePorRfc(String rfc){
 
         return clientes.stream().filter(cliente -> cliente.getRfc().equals(rfc)).findFirst().orElse(null);
-
     }
 
     @Override
