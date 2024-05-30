@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.function.*;
 import java.util.stream.IntStream;
 
-public class Ejercicios {
+public class Ejercicios_28_Mayo {
 
     public static void main(String[] args) {
 
