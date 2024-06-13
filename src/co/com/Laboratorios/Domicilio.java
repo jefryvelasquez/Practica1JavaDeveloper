@@ -1,4 +1,4 @@
-package co.com.Practica1;
+package co.com.Laboratorios;
 
 public class Domicilio {
 
