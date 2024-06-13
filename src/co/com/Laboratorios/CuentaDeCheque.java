@@ -1,11 +1,13 @@
-package co.com.Practica1;
+package co.com.Laboratorios;
+
+import java.time.LocalDate;
 
 public class CuentaDeCheque extends Cuenta {
 
     private double costoManejoMensual;
 
-public CuentaDeCheque(int numero, double saldo, double costoManejoMensual) {
-        super(numero, saldo);
+public CuentaDeCheque(int numero, LocalDate fechaApertura, double saldo, double costoManejoMensual) {
+        super(numero, fechaApertura, saldo);
         this.costoManejoMensual = costoManejoMensual;
     }
 

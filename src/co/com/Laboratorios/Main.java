@@ -1,4 +1,6 @@
-package co.com.Practica1;
+package co.com.Laboratorios;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args)
@@ -10,18 +12,18 @@ public class Main {
 
         Cliente cliente = new Cliente(1, "Juan Perez",
                 new Domicilio("Calle 1", 123,"Centro", "Aguascalientes", 20000),
-                "PEJL890123", "4491234567", "01/01/1990");
+                "PEJL890123", "4491234567", LocalDate.of(1987, 3, 23));
         Cliente cliente2 = new Cliente(2, "Maria Lopez",
                 new Domicilio("Calle 2", 456, "Insurgentes", "Aguascalientes", 20010),
-                "LOML890123", "4497654321", "02/02/1990");
+                "LOML890123", "4497654321", LocalDate.of(1997, 3, 13));
 
 
 
-        CuentaDeAhorro cuentaDeAhorro = new CuentaDeAhorro(1, 1000, 0.05);
-        CuentaDeCheque cuentaDeCheque = new CuentaDeCheque(2, 2000, 50);
+        CuentaDeAhorro cuentaDeAhorro = new CuentaDeAhorro(1, LocalDate.of(2015, 5, 31),1000, 0.05);
+        CuentaDeCheque cuentaDeCheque = new CuentaDeCheque(2,LocalDate.of(1965, 1, 1) ,2000, 50);
 
-        CuentaDeAhorro cuentaDeAhorro2 = new CuentaDeAhorro(3, 1000, 0.05);
-        CuentaDeCheque cuentaDeCheque2 = new CuentaDeCheque(4, 2000, 50);
+        CuentaDeAhorro cuentaDeAhorro2 = new CuentaDeAhorro(3, LocalDate.of(1999, 11, 10),1000, 0.05);
+        CuentaDeCheque cuentaDeCheque2 = new CuentaDeCheque(4, LocalDate.of(2000, 9, 11),2000, 50);
 
         cliente.agregarCuenta(cuentaDeAhorro);
         cliente.agregarCuenta(cuentaDeCheque);

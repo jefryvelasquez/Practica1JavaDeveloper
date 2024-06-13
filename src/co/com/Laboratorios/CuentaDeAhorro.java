@@ -1,11 +1,13 @@
-package co.com.Practica1;
+package co.com.Laboratorios;
+
+import java.time.LocalDate;
 
 public class CuentaDeAhorro extends Cuenta {
 
     private double tasaInteresMensual;
 
-    public CuentaDeAhorro(int numero, double saldo, double tasaInteresMensual) {
-        super(numero, saldo );
+    public CuentaDeAhorro(int numero, LocalDate fechaApertura, double saldo, double tasaInteresMensual) {
+        super(numero, fechaApertura,saldo );
         this.tasaInteresMensual = tasaInteresMensual;
     }
 
