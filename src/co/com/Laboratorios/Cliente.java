@@ -86,13 +86,13 @@ public class Cliente implements ServicioCuentas, Comparable<Cliente> {
         return cuentas.removeIf(cuenta -> cuenta.getNumero() == numero);
     }
     public void abonarCuenta(int numero, double abono){
-        cuentas.stream()
+        cuentas.parallelStream()
                 .filter(cuenta -> cuenta.getNumero() == numero)
                 .findFirst()
                 .ifPresent(cuenta -> cuenta.setSaldo(cuenta.getSaldo() + abono));
     }
     public void retirar(int numero, double retiro){
-        cuentas.stream()
+        cuentas.parallelStream()
                 .filter(cuenta -> cuenta.getNumero() == numero)
                 .findFirst()
                 .ifPresent(cuenta -> cuenta.setSaldo(cuenta.getSaldo() - retiro));
